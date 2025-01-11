@@ -28,6 +28,7 @@ wp-content/plugins/fakerpress/
 wp-content/wp-rocket-config/*
 wp-content/wp-rocket-config/index.html
 local-phpinfo.php
+vendor
 
 # wpengine specific
 .smushit-status
