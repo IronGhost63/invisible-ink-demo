@@ -104,7 +104,7 @@ class ContactForm extends Block
         'anchor' => true,
         'mode' => true,
         'multiple' => false,
-        'jsx' => true,
+        'jsx' => false,
         'color' => [
             'background' => false,
             'text' => false,
@@ -125,11 +125,7 @@ class ContactForm extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
+        'title' => 'Send us a message',
     ];
 
     /**
@@ -148,33 +144,36 @@ class ContactForm extends Block
     public function with(): array
     {
         return [
-            'items' => $this->items(),
+            'title' => get_field('title') ?: $this->example['title'],
+            'contact_form_id' => trim( get_field('contact_form_id') ),
         ];
     }
 
     /**
      * The block field group.
      */
-    public function fields(): array
-    {
+    public function fields(): array {
+        global $wpdb;
+
+        $sql = 'SELECT id, title FROM '. $wpdb->prefix  .'fluentform_forms LIMIT 0,1000';
+        $results = $wpdb->get_results($sql, ARRAY_A);
+        $choices = [];
+
+        foreach( $results as $row ) {
+            $choices[' '.$row['id']] = $row['title'];
+        }
+
         $fields = Builder::make('contact_form');
 
         $fields
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addText('title')
+            ->addSelect('contact_form_id', [
+                'ui' => 1,
+                'label' => 'Choose Contact Form',
+                'choices' => $choices,
+            ]);
 
         return $fields->build();
-    }
-
-    /**
-     * Retrieve the items.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
     }
 
     /**

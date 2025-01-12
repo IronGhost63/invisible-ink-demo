@@ -1,0 +1,12 @@
+@tailwind base;
+@import "./common/fonts";
+@import "./base";
+
+@tailwind components;
+@import "./partials/navigation";
+@import "./partials/main-menu";
+@import "./partials/footer";
+@import "./partials/newsletter";
+@import "./partials/contact-form";
+
+@tailwind utilities;

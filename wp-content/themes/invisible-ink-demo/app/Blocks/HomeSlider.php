@@ -4,6 +4,7 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use Log1x\AcfComposer\Builder;
+use function \Roots\asset;
 
 class HomeSlider extends Block
 {
@@ -125,8 +126,13 @@ class HomeSlider extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
+        'slides' => [
+            [
+                'title' => 'Item one',
+                'tagline' => '',
+                'link' => [],
+                'background' => ''
+            ],
             ['item' => 'Item two'],
             ['item' => 'Item three'],
         ],
@@ -148,7 +154,7 @@ class HomeSlider extends Block
     public function with(): array
     {
         return [
-            'items' => $this->items(),
+            'slides' => $this->slides(),
         ];
     }
 
@@ -160,8 +166,11 @@ class HomeSlider extends Block
         $fields = Builder::make('home_slider');
 
         $fields
-            ->addRepeater('items')
-                ->addText('item')
+            ->addRepeater('slides')
+                ->addText('title')
+                ->addText('tagline')
+                ->addLink('link')
+                ->addImage('background')
             ->endRepeater();
 
         return $fields->build();
@@ -172,9 +181,9 @@ class HomeSlider extends Block
      *
      * @return array
      */
-    public function items()
+    public function slides()
     {
-        return get_field('items') ?: $this->example['items'];
+        return get_field('slides') ?: $this->example['items'];
     }
 
     /**

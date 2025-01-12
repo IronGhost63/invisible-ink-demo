@@ -1,0 +1,19 @@
+.newsletter {
+  @apply text-center bg-light-taupe px-5 lg:px-0 py-8 lg:py-[90px];
+
+  &__title {
+    @apply text-white uppercase mb-9 lg:mb-12 text-[32px];
+  }
+
+  &__email {
+    @apply bg-light-taupe text-white border-b border-b-white w-10/12 lg:w-[450px] py-1 mb-5 lg:mb-0;
+
+    &::placeholder {
+      @apply text-white;
+    }
+  }
+
+  &__subscribe {
+    @apply bg-white px-6 py-[5px] lg:ml-[-4px];
+  }
+}

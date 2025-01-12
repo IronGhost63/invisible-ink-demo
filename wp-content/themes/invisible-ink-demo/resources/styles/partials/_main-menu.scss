@@ -1,0 +1,31 @@
+.main-menu {
+  @apply hidden opacity-0 fixed bg-olive-drab justify-center items-center top-0 left-0 right-0 bottom-0 transition;
+
+  &__container {
+    @apply translate-y-28 transition;
+  }
+
+  &__item {
+    @apply text-center mb-12;
+  }
+
+  &__item-link {
+    @apply text-white text-[28px] leading-[0.02em] uppercase;
+  }
+
+  &__close-btn {
+    @apply w-[24px] h-[24px] absolute text-white right-[18px] top-[56px] lg:right-[38px] lg:top-[42px] text-[32px];
+  }
+
+  &.active {
+    @apply flex;
+  }
+
+  &.display {
+    @apply opacity-100 transition;
+
+    .main-menu__container {
+      @apply translate-y-0;
+    }
+  }
+}

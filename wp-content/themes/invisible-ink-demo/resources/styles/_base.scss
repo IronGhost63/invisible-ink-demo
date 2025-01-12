@@ -1,0 +1,13 @@
+@layer base {
+  html {
+    @apply font-serif;
+  }
+
+  body {
+    @apply pt-20;
+
+    &.admin-bar {
+      @apply pt-[126px] lg:pt-[112px];
+    }
+  }
+}

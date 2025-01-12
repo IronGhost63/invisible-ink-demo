@@ -1,0 +1,29 @@
+.contact-form {
+  @apply bg-lotion py-[50px] lg:py-[60px] px-6 lg:px-0;
+
+  &__title {
+    @apply text-[32px] lg:text-[36px] text-light-taupe uppercase text-center mb-6;
+  }
+
+  &__section-title {
+    h3 {
+      @apply text-left text-[22px];
+    }
+  }
+
+  .container {
+    @apply max-w-[780px];
+  }
+
+  .ff-el-form-control {
+    @apply rounded-none font-serif;
+
+    &::placeholder {
+      @apply font-serif;
+    }
+  }
+
+  .ff-btn-submit {
+    @apply bg-transparent rounded-none border-black border px-6 py-[5px];
+  }
+}

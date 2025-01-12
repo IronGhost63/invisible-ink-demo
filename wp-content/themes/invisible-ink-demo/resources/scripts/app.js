@@ -1,10 +1,11 @@
 import domReady from '@roots/sage/client/dom-ready';
+import mainMenu from "./components/mainMenu";
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
-  // ...
+  mainMenu();
 });
 
 /**

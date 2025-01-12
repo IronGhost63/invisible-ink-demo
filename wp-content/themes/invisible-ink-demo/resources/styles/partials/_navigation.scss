@@ -1,0 +1,25 @@
+.navigation {
+  @apply fixed top-0 bg-white w-full h-20 text-center flex items-center justify-center;
+
+  &__home-link {
+    @apply inline-block text-center;
+  }
+
+  &__mobile-menu {
+    @apply block absolute w-[27px] right-[18px] lg:right-[38px] top-[18px] lg:top-[22px];
+
+    span {
+      @apply block w-[27px] h-[3px] bg-black my-[6px];
+    }
+  }
+
+  &__logo-image {
+    @apply w-3/4 lg:w-full mx-auto;
+  }
+}
+
+.admin-bar {
+  .navigation {
+    @apply top-[46px] lg:top-[32px];
+  }
+}

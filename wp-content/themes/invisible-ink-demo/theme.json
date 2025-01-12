@@ -1249,6 +1249,21 @@
           "color": "#4c0519",
           "name": "Rose 950",
           "slug": "rose-950"
+        },
+        {
+          "color": "#3e451f",
+          "name": "Olive-drab",
+          "slug": "olive-drab"
+        },
+        {
+          "color": "#a89a70",
+          "name": "Light-taupe",
+          "slug": "light-taupe"
+        },
+        {
+          "color": "#fafafa",
+          "name": "Lotion",
+          "slug": "lotion"
         }
       ]
     },
@@ -1274,19 +1289,9 @@
       "customFontSize": false,
       "fontFamilies": [
         {
-          "fontFamily": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-          "name": "Ui-sans-serif",
-          "slug": "sans"
-        },
-        {
-          "fontFamily": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
-          "name": "Ui-serif",
+          "fontFamily": "Lora,ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+          "name": "Lora",
           "slug": "serif"
-        },
-        {
-          "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-          "name": "Ui-monospace",
-          "slug": "mono"
         }
       ],
       "fontSizes": [

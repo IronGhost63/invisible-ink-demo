@@ -104,7 +104,7 @@ class NewsletterSubscribe extends Block
         'anchor' => true,
         'mode' => true,
         'multiple' => false,
-        'jsx' => true,
+        'jsx' => false,
         'color' => [
             'background' => false,
             'text' => false,
@@ -117,7 +117,7 @@ class NewsletterSubscribe extends Block
      *
      * @var array
      */
-    public $styles = ['light', 'dark'];
+    public $styles = ['light'];
 
     /**
      * The block preview example data.
@@ -125,11 +125,7 @@ class NewsletterSubscribe extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
+        'title' => 'Subscribe to our newsletter',
     ];
 
     /**
@@ -148,7 +144,7 @@ class NewsletterSubscribe extends Block
     public function with(): array
     {
         return [
-            'items' => $this->items(),
+            'title' => $this->title(),
         ];
     }
 
@@ -160,9 +156,7 @@ class NewsletterSubscribe extends Block
         $fields = Builder::make('newsletter_subscribe');
 
         $fields
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addText('title');
 
         return $fields->build();
     }
@@ -172,9 +166,9 @@ class NewsletterSubscribe extends Block
      *
      * @return array
      */
-    public function items()
+    public function title()
     {
-        return get_field('items') ?: $this->example['items'];
+        return get_field('title') ?: $this->example['title'];
     }
 
     /**

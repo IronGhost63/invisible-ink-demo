@@ -1,0 +1,15 @@
+.footer {
+  @apply bg-olive-drab pt-[42px] lg:pt-[62px] pb-[39px] lg:pb-[53px] px-5 lg:px-0 text-white;
+
+  .widget {
+    .widgettitle {
+      @apply text-[24px] underline underline-offset-8 uppercase font-light mb-4;
+    }
+
+    .menu {
+      .menu-item {
+        @apply text-[19px] font-light mb-3;
+      }
+    }
+  }
+}
