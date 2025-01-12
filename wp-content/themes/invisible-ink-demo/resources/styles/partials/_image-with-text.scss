@@ -1,0 +1,27 @@
+.image-with-text {
+  @apply relative lg:px-[38px] lg:py-[150px];
+
+  &__image-container {
+    @apply lg:w-10/12 aspect-[375/300] lg:aspect-[1020/600];
+  }
+
+  &__image {
+    @apply object-cover w-full h-full;
+  }
+
+  &__content {
+    @apply bg-light-taupe text-center text-white lg:absolute lg:right-[38px] lg:top-1/2 lg:w-4/12 aspect-[375/322] lg:aspect-[560/450] lg:-translate-y-1/2 px-[20px] py-[46px] lg:px-[60px] lg:py-[90px] flex flex-col items-center justify-center;
+  }
+
+  &__title {
+    @apply text-[32px] lg:text-[36px] mb-10 uppercase;
+  }
+
+  &__description {
+    @apply text-[16px];
+  }
+
+  &__link {
+    @apply mt-10 bg-transparent rounded-none border-white border px-6 py-[5px];
+  }
+}

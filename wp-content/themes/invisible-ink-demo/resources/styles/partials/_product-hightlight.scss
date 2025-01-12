@@ -1,0 +1,40 @@
+.product-highlight {
+  @apply px-[20px];
+
+  &__title {
+    @apply text-[32px] lg:text-[36px] text-light-taupe uppercase text-center mb-3;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply text-black hidden md:flex;
+  }
+
+  &__product-slide {
+    @apply mb-[50px];
+  }
+
+  &__item {
+    @apply text-center py-[50px];
+  }
+
+  &__image {
+    @apply aspect-[256/403] mx-auto;
+  }
+
+  &__brand {
+    @apply uppercase font-bold mb-4;
+  }
+
+  &__name {
+    @apply mb-4;
+  }
+
+  &__price {
+    @apply mb-4;
+  }
+
+  &__link {
+    @apply italic underline hover:text-gray-800 mb-4;
+  }
+}

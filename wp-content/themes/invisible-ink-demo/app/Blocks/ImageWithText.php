@@ -4,6 +4,7 @@ namespace App\Blocks;
 
 use Log1x\AcfComposer\Block;
 use Log1x\AcfComposer\Builder;
+use function \Roots\asset;
 
 class ImageWithText extends Block
 {
@@ -117,7 +118,7 @@ class ImageWithText extends Block
      *
      * @var array
      */
-    public $styles = ['light', 'dark'];
+    public $styles = ['light'];
 
     /**
      * The block preview example data.
@@ -125,13 +126,15 @@ class ImageWithText extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
+        'image' => 'images/demo/service.jpg',
+        'title' => 'Lorem ipsum dolor sit amet',
+        'description' => 'Consectetur adipisicing elit. Esse ipsa reprehenderit, ad dolor nemo neque, tempora voluptatum omnis inventore laborum velit architecto, placeat amet dicta? Tempora doloribus reprehenderit impedit libero.',
+        'link' => [
+            'url' => '#',
+            'title' => 'Read more',
+            'target' => '_blank',
         ],
     ];
-
     /**
      * The block template.
      *
@@ -148,7 +151,10 @@ class ImageWithText extends Block
     public function with(): array
     {
         return [
-            'items' => $this->items(),
+            'image' => get_field('image') ?: asset($this->example['image']),
+            'title' => get_field('title') ?: $this->example['title'],
+            'description' => get_field('description') ?: $this->example['description'],
+            'link' => get_field('link') ?: $this->example['link'],
         ];
     }
 
@@ -160,9 +166,12 @@ class ImageWithText extends Block
         $fields = Builder::make('image_with_text');
 
         $fields
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addImage('image', [
+                'return_format' => 'url',
+            ])
+            ->addText('title')
+            ->addTextarea('description')
+            ->addLink('link');
 
         return $fields->build();
     }

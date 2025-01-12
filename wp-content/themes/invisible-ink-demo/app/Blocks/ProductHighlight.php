@@ -104,7 +104,7 @@ class ProductHighlight extends Block
         'anchor' => true,
         'mode' => true,
         'multiple' => false,
-        'jsx' => true,
+        'jsx' => false,
         'color' => [
             'background' => false,
             'text' => false,
@@ -125,11 +125,8 @@ class ProductHighlight extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
+        'title' => 'Lorem ipsum dolor sit amet',
+        'products' => [],
     ];
 
     /**
@@ -145,10 +142,10 @@ class ProductHighlight extends Block
     /**
      * Data to be passed to the block before rendering.
      */
-    public function with(): array
-    {
+    public function with(): array{
         return [
-            'items' => $this->items(),
+            'title' => get_field('title') ?: $this->example['title'],
+            'products' => $this->products(),
         ];
     }
 
@@ -160,9 +157,12 @@ class ProductHighlight extends Block
         $fields = Builder::make('product_highlight');
 
         $fields
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addText('title')
+            ->addRelationship('product', [
+                'post_type' => ['product'],
+                'filters' => ['search'],
+                'return_format' => 'object',
+            ]);
 
         return $fields->build();
     }
@@ -172,9 +172,22 @@ class ProductHighlight extends Block
      *
      * @return array
      */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
+    public function products(){
+        $products = array_map(function( $item ) {
+            return [
+                'title' => $item->post_title,
+                'brand' => get_field( 'brand', $item->ID ),
+                'price' => get_field( 'price', $item->ID ),
+                'url' => get_permalink( $item->ID ),
+                'thumbnail' => get_the_post_thumbnail_url( $item->ID, 'large' ),
+            ];
+        }, get_field('product') ?: []);
+
+        if ( count( $products ) <= 4 ) {
+            $products = array_merge($products, $products);
+        }
+
+        return $products;
     }
 
     /**

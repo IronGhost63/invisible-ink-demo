@@ -117,7 +117,7 @@ class ContactForm extends Block
      *
      * @var array
      */
-    public $styles = ['light', 'dark'];
+    public $styles = ['light'];
 
     /**
      * The block preview example data.

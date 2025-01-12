@@ -4,7 +4,7 @@
   }
 
   body {
-    @apply pt-20;
+    @apply pt-20 antialiased;
 
     &.admin-bar {
       @apply pt-[126px] lg:pt-[112px];

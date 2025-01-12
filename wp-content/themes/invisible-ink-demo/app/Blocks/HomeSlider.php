@@ -105,7 +105,7 @@ class HomeSlider extends Block
         'anchor' => true,
         'mode' => true,
         'multiple' => false,
-        'jsx' => true,
+        'jsx' => false,
         'color' => [
             'background' => false,
             'text' => false,
@@ -118,7 +118,7 @@ class HomeSlider extends Block
      *
      * @var array
      */
-    public $styles = ['light', 'dark'];
+    public $styles = ['light'];
 
     /**
      * The block preview example data.
@@ -128,13 +128,45 @@ class HomeSlider extends Block
     public $example = [
         'slides' => [
             [
-                'title' => 'Item one',
-                'tagline' => '',
-                'link' => [],
-                'background' => ''
+                'title' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+                'tagline' => 'Maxime doloremque pariatur',
+                'link' => [
+                    'url' => '#',
+                    'title' => 'Read more',
+                    'target' => '_blank',
+                ],
+                'background' => 'images/demo/slide1.jpg',
             ],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
+            [
+                'title' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+                'tagline' => 'Maxime doloremque pariatur',
+                'link' => [
+                    'url' => '#',
+                    'title' => 'Read more',
+                    'target' => '_blank',
+                ],
+                'background' => 'images/demo/slide2.jpg',
+            ],
+            [
+                'title' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+                'tagline' => 'Maxime doloremque pariatur',
+                'link' => [
+                    'url' => '#',
+                    'title' => 'Read more',
+                    'target' => '_blank',
+                ],
+                'background' => 'images/demo/slide3.jpg',
+            ],
+            [
+                'title' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+                'tagline' => 'Maxime doloremque pariatur',
+                'link' => [
+                    'url' => '#',
+                    'title' => 'Read more',
+                    'target' => '_blank',
+                ],
+                'background' => 'images/demo/slide4.jpg',
+            ],
         ],
     ];
 
@@ -151,10 +183,17 @@ class HomeSlider extends Block
     /**
      * Data to be passed to the block before rendering.
      */
-    public function with(): array
-    {
+    public function with(): array {
+        $example = $this->example;
+        $example['slides'] = array_map( fn( $item ) => [
+            'title' => $item['title'],
+            'tagline' => $item['tagline'],
+            'link' => $item['link'],
+            'background' => asset($item['background']),
+        ], $example['slides']);
+
         return [
-            'slides' => $this->slides(),
+            'slides' => get_field('slides') ?: $example['slides'],
         ];
     }
 
@@ -170,20 +209,12 @@ class HomeSlider extends Block
                 ->addText('title')
                 ->addText('tagline')
                 ->addLink('link')
-                ->addImage('background')
+                ->addImage('background', [
+                    'return_format' => 'url',
+                ])
             ->endRepeater();
 
         return $fields->build();
-    }
-
-    /**
-     * Retrieve the items.
-     *
-     * @return array
-     */
-    public function slides()
-    {
-        return get_field('slides') ?: $this->example['items'];
     }
 
     /**

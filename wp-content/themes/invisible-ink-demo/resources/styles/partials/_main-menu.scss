@@ -1,5 +1,5 @@
 .main-menu {
-  @apply hidden opacity-0 fixed bg-olive-drab justify-center items-center top-0 left-0 right-0 bottom-0 transition;
+  @apply hidden opacity-0 fixed bg-olive-drab justify-center items-center top-0 left-0 right-0 bottom-0 transition z-50;
 
   &__container {
     @apply translate-y-28 transition;

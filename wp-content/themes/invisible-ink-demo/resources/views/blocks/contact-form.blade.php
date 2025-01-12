@@ -1,5 +1,5 @@
 <div class="contact-form {{ $block->classes }}" style="{{ $block->inlineStyle }}">
-  <div class="container">
+  <div class="container mx-auto">
     @if ($contact_form_id)
     <h3 class="contact-form__title">{{ $title }}</h3>
     @if ( $block->preview )

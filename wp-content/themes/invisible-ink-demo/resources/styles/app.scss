@@ -3,10 +3,15 @@
 @import "./base";
 
 @tailwind components;
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/scrollbar";
 @import "./partials/navigation";
 @import "./partials/main-menu";
 @import "./partials/footer";
 @import "./partials/newsletter";
 @import "./partials/contact-form";
+@import "./partials/image-with-text";
+@import "./partials/product-hightlight";
 
 @tailwind utilities;
