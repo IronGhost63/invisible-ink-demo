@@ -145,7 +145,7 @@ class ContactForm extends Block
     {
         return [
             'title' => get_field('title') ?: $this->example['title'],
-            'contact_form_id' => trim( get_field('contact_form_id') ),
+            'privacy_policy' => get_privacy_policy_url(),
         ];
     }
 
@@ -166,12 +166,7 @@ class ContactForm extends Block
         $fields = Builder::make('contact_form');
 
         $fields
-            ->addText('title')
-            ->addSelect('contact_form_id', [
-                'ui' => 1,
-                'label' => 'Choose Contact Form',
-                'choices' => $choices,
-            ]);
+            ->addText('title');
 
         return $fields->build();
     }

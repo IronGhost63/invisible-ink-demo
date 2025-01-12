@@ -10,4 +10,8 @@
       @apply pt-[126px] lg:pt-[112px];
     }
   }
+
+  a {
+    @apply underline;
+  }
 }

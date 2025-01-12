@@ -15,15 +15,79 @@
     @apply max-w-[780px];
   }
 
-  .ff-el-form-control {
-    @apply rounded-none font-serif;
+  &__input-row {
+    @apply flex flex-wrap mb-2;
+  }
+
+  &__input-wrapper {
+    @apply p-1;
+
+    &--salutation {
+      @apply w-1/3 lg:w-1/5;
+    }
+
+    &--firstname {
+      @apply w-2/3 lg:w-2/5;
+    }
+
+    &--lastname {
+      @apply w-full lg:w-2/5;
+    }
+
+    &--email {
+      @apply w-full lg:w-1/2;
+    }
+
+    &--country-code {
+      @apply w-1/3 lg:w-1/6;
+    }
+
+    &--phone {
+      @apply w-2/3 lg:w-1/3;
+    }
+
+    &--country {
+      @apply w-full;
+    }
+
+    &--branch-country {
+      @apply w-full lg:w-1/4;
+    }
+
+    &--branch {
+      @apply w-full lg:w-3/4;
+    }
+
+    &--message {
+      @apply w-full;
+    }
+  }
+
+  &__input {
+    @apply border border-platinum w-full p-2 lg:p-3 font-serif box-border lg:min-h-[50px];
 
     &::placeholder {
       @apply font-serif;
     }
+
+    &--textarea {
+      @apply min-h-[180px];
+    }
+
+    &--checkbox {
+      @apply w-[18px] h-[18px] lg:min-h-0 mr-2;
+    }
   }
 
-  .ff-btn-submit {
+  &__input-label {
+    @apply flex;
+  }
+
+  &__submit-container {
+    @apply text-center;
+  }
+
+  &__submit {
     @apply bg-transparent rounded-none border-black border px-6 py-[5px];
   }
 }

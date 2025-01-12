@@ -35,7 +35,7 @@
   }
 
   &__pagination {
-    @apply flex absolute bottom-[50px] lg:bottom-[30px] z-40 left-1/2 -translate-x-1/2 max-w-[80%] lg:max-w-full;
+    @apply flex absolute bottom-[50px] lg:bottom-[30px] z-40 left-1/2 -translate-x-1/2 max-w-[80%] lg:max-w-[1280px];
 
     .swiper-pagination-bullet {
       @apply flex-1 border-t-2 border-t-platinum text-white;

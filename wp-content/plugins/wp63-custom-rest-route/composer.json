@@ -1,0 +1,16 @@
+{
+    "name": "wp63/wp63-custom-rest-route",
+    "description": "Custom REST Endpoints",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "WP63\\Wp63CustomRestRoute\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jay",
+            "email": "me@jirayu.in.th"
+        }
+    ]
+}
