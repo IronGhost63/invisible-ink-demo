@@ -23,18 +23,18 @@
   }
 
   &__brand {
-    @apply uppercase font-bold mb-4;
+    @apply uppercase font-bold mb-3 lg:mb-4;
   }
 
   &__name {
-    @apply mb-4;
+    @apply mb-3 lg:mb-4;
   }
 
   &__price {
-    @apply mb-4;
+    @apply mb-3 lg:mb-4;
   }
 
   &__link {
-    @apply italic underline hover:text-gray-800 mb-4;
+    @apply italic underline hover:text-gray-800 mb-3 lg:mb-4;
   }
 }
