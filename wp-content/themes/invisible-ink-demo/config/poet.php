@@ -13,15 +13,15 @@ return [
     */
 
     'post' => [
-        'book' => [
-            'enter_title_here' => 'Enter book title',
+        'product' => [
+            'enter_title_here' => 'Product name',
             'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'supports' => ['title', 'editor', 'author', 'thumbnail'],
             'show_in_rest' => true,
             'has_archive' => false,
             'labels' => [
-                'singular' => 'Book',
-                'plural' => 'Books',
+                'singular' => 'Product',
+                'plural' => 'Products',
             ],
         ],
     ],
@@ -37,10 +37,10 @@ return [
     */
 
     'taxonomy' => [
-        'genre' => [
-            'links' => ['book'],
-            'meta_box' => 'radio',
-        ],
+        // 'genre' => [
+        //     'links' => ['book'],
+        //     'meta_box' => 'radio',
+        // ],
     ],
 
     /*
@@ -123,9 +123,9 @@ return [
     */
 
     'block_pattern_category' => [
-        'all' => [
-            'label' => 'All Patterns',
-        ],
+        // 'all' => [
+        //     'label' => 'All Patterns',
+        // ],
     ],
 
     /*
