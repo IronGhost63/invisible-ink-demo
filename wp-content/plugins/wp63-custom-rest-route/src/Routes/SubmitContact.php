@@ -13,14 +13,26 @@ class SubmitContact extends Route implements Post {
     }
 
     public function Post( $request ) {
+        $params = $request->get_params();
+        $required = ['salutation', 'firstname', 'lastname', 'email', 'countryCode', 'phone', 'branchCountry', 'branch', 'message', 'agreement'];
+
+        foreach( $required as $field ) {
+            if ( empty( $params[$field] ) ) {
+                return new WP_REST_Response([
+                    'message' => 'missing required field: ' . $field,
+                    'params' => $params,
+                ], 500);
+            }
+        }
+
         $payload = [
-            'fullName' => $request['salutation'] . $request['firstname'] . ' ' . $request['lastname'],
-            'phone' => '(' . $request['country-code'] . ') ' . $request['phone'],
-            'email' => $request['email'],
-            'country' => $request['country'],
-            'boutique' => $request['branch'] . ' in ' . $request['branch-country'],
-            'message' => $request['message'],
-            'agreed_to_policy' => $request['agreement'],
+            'fullName' => $params['salutation'] . $params['firstname'] . ' ' . $params['lastname'],
+            'phone' => '(' . $params['countryCode'] . ') ' . $params['phone'],
+            'email' => $params['email'],
+            'country' => $params['country'],
+            'boutique' => $params['branch'] . ' in ' . $params['branchCountry'],
+            'message' => $params['message'],
+            'agreed_to_policy' => $params['agreement'],
         ];
 
         $admin_email = get_option('admin_email');
@@ -35,7 +47,7 @@ class SubmitContact extends Route implements Post {
             ], 200);
         } else {
             return new WP_REST_Response([
-                'message' => 'erro occurred while sending email',
+                'message' => 'error occurred while sending email',
             ], 500);
         }
     }

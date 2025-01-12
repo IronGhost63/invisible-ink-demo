@@ -1,5 +1,5 @@
 <div class="contact-form {{ $block->classes }}" style="{{ $block->inlineStyle }}">
-  <form action="">
+  <form name="contact-form" class="contact-form__form" action="">
     <div class="container mx-auto">
       <h3 class="contact-form__title">{{ $title }}</h3>
       <div class="contact-form__container">
@@ -30,13 +30,13 @@
               <option>+65</option>
             </select>
           </div>
-          <div class="contact-form__input-wrapper contact-form__input-wrapper--phone" required>
-            <input type="text" name="phone" class="contact-form__input contact-form__input--phone" placeholder="Phone Number">
+          <div class="contact-form__input-wrapper contact-form__input-wrapper--phone">
+            <input type="text" name="phone" class="contact-form__input contact-form__input--phone" placeholder="Phone Number" required>
           </div>
         </div>
         <div class="contact-form__input-row contact-form__input-row--country">
           <div class="contact-form__input-wrapper contact-form__input-wrapper--country">
-            <input type="text" name="country" class="contact-form__input contact-form__input--country" placehoder="Which country / region do you reside in?">
+            <input type="text" name="country" class="contact-form__input contact-form__input--country" placeholder="Which country / region do you reside in?">
           </div>
         </div>
         <h4 class="contact-form__section-title">Which Boutique would you like a reply from?</h4>
@@ -59,13 +59,14 @@
         </div>
         <div class="contact-form__input-row contact-form__input-row--agreement">
           <label for="contact-form__agreement" class="contact-form__input-label">
-            <input type="checkbox" class="contact-form__input contact-form__input--checkbox" name="agreement" id="contact-form__agreement">
+            <input type="checkbox" class="contact-form__input contact-form__input--checkbox" name="agreement" id="contact-form__agreement" required>
             <p>I agree to the collection and use of my personal data by The Swainson Group in accordance with the <a href="{{ $privacy_policy }}">Privacy Policy</a>.</p>
           </label>
         </div>
         <div class="contact-form__submit-container">
           <button type="submit" class="contact-form__submit">Submit</button>
         </div>
+        <div class="contact-form__submit-message"></div>
       </div>
     </div>
   </form>
