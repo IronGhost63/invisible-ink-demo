@@ -11,19 +11,18 @@ export default () => {
   const carousel = new Swiper(productHighlight, {
     modules: [Scrollbar, Navigation],
     scrollbar: {
-      el: '.swiper-scrollbar',
+      el: '.product-highlight__scrollbar',
       draggable: true,
     },
-    navigation: false,
+    navigation: {
+      nextEl: ".product-highlight__button-next",
+      prevEl: ".product-highlight__button-prev",
+    },
     slidesPerView: 3.5,
     spaceBetween: '16',
     breakpoints: {
       720: {
         slidesPerView: 4,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
       },
     },
   });

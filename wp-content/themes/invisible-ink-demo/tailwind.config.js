@@ -16,6 +16,7 @@ const config = {
         'olive-drab': '#3e451f',
         'light-taupe': '#a89a70',
         'lotion': '#fafafa',
+        'platinum': '#e3e3e3',
       }, // Extend Tailwind's default colors
     },
   },

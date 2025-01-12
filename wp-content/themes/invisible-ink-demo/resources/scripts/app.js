@@ -1,6 +1,7 @@
 import domReady from '@roots/sage/client/dom-ready';
 import mainMenu from "./components/mainMenu";
 import productHighlight from "./components/productHighlight";
+import homeSlider from "./components/homeSlider";
 
 /**
  * Application entrypoint
@@ -8,6 +9,7 @@ import productHighlight from "./components/productHighlight";
 domReady(async () => {
   mainMenu();
   productHighlight();
+  homeSlider();
 });
 
 /**

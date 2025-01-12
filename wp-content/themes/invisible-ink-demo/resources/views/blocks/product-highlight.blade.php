@@ -25,9 +25,9 @@
           </div>
           @endforeach
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-scrollbar"></div>
+        <div class="product-highlight__button-prev swiper-button-prev"></div>
+        <div class="product-highlight__button-next swiper-button-next"></div>
+        <div class="product-highlight__scrollbar swiper-scrollbar"></div>
       </div>
     </div>
     @endif
