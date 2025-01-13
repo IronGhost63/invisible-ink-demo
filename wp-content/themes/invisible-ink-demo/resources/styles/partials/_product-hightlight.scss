@@ -1,5 +1,5 @@
 .product-highlight {
-  @apply px-[20px];
+  @apply px-[20px] pt-[50px] lg:pt-[80px];
 
   &__title {
     @apply text-[32px] lg:text-[36px] text-light-taupe uppercase text-center mb-3;

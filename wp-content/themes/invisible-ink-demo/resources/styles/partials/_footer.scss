@@ -3,13 +3,19 @@
 
   .widget {
     .widgettitle {
-      @apply text-[24px] underline underline-offset-8 uppercase font-light mb-4;
+      @apply text-[24px] underline underline-offset-8 uppercase font-light mb-4 decoration-light-taupe;
     }
 
     .menu {
       .menu-item {
         @apply text-[19px] font-light mb-3;
       }
+    }
+  }
+
+  .menu-social-container {
+    ul {
+      @apply flex lg:grid grid-cols-3 lg:max-w-[140px];
     }
   }
 }

@@ -1,0 +1,59 @@
+.social-icon {
+  a {
+    @apply w-[22px] h-[22px] block relative overflow-hidden -indent-80;
+
+    &::after {
+      @apply top-0 left-0 right-0 bottom-0 w-[22px] h-[22px] block absolute bg-no-repeat bg-contain;
+
+      content: '';
+    }
+  }
+
+  &--facebook {
+    a {
+      &::after {
+        background-image: url('../../images/icon-facebook.svg');
+      }
+    }
+  }
+
+  &--instagram {
+    a {
+      &::after {
+        background-image: url('../../images/icon-instagram.svg');
+      }
+    }
+  }
+
+  &--linkedin {
+    a {
+      &::after {
+        background-image: url('../../images/icon-linkedin.svg');
+      }
+    }
+  }
+
+  &--youtube {
+    a {
+      @apply w-[26px] h-[18px];
+
+      &::after {
+        @apply w-[26px] h-[18px];
+
+        background-image: url('../../images/icon-youtube.svg');
+      }
+    }
+  }
+
+  &--wechat {
+    a {
+      @apply w-[25px] h-[20px];
+
+      &::after {
+        @apply w-[25px] h-[20px];
+
+        background-image: url('../../images/icon-wechat.svg');
+      }
+    }
+  }
+}
