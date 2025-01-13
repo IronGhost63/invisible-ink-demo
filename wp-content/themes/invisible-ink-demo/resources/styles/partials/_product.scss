@@ -1,0 +1,29 @@
+.product {
+  &__wrapper {
+    @apply lg:flex gap-x-5 max-w-[1000px] mx-auto py-16;
+  }
+
+  &__meta {
+    @apply mb-6 pb-6 border-b border-platinum;
+  }
+
+  &__title {
+    @apply font-semibold text-3xl mb-4;
+  }
+
+  &__brand {
+    @apply font-medium text-xl mb-4;
+  }
+
+  &__price {
+    @apply font-medium text-xl mb-4;
+  }
+
+  &__photo {
+    @apply basis-1/3;
+  }
+
+  &__detail {
+    @apply basis-2/3 text-xl;
+  }
+}
