@@ -24,12 +24,6 @@ export default () => {
     reset: false
   });
 
-  ScrollReveal().reveal('.product-highlight__item', {
-    interval: 100,
-    duration: 800,
-    reset: false
-  });
-
   ScrollReveal().reveal('.image-with-text__image-container', {
     duration: 800,
     origin: 'left',
